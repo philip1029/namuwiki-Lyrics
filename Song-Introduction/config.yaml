@@ -1,0 +1,51 @@
+## 쌍따옴표 안에 값을 입력하세요!
+## 값을 모두 입력한 후 namuwiki_Song-Introduction.py 파일을 실행하면 됩니다.
+
+
+# 글자 색 입력
+color: "#FFF" # "#FFF" or "#000"
+
+
+# 나무위키 문서 상 노래 제목
+song: "Echoes" # ex)Wish You Were Here(노래)
+
+# 문서에서 출력되는 노래 제목
+song_view: "Echoes" # ex)Wish You Were Here
+
+
+# 나무위키 문서 상 아티스트 명
+artist: "핑크 플로이드" # ex)핑크 플로이드
+
+# 문서에서 출력되는 아티스트 명
+artist_view: "Pink Floyd" # ex)Pink Floyd
+
+
+# 노래의 유튜브 링크 식별코드
+link: "53N99Nim6WE" # ex)https://www.youtube.com/watch?v=53N99Nim6WE의 경우 "53N99Nim6WE"
+
+
+# 노래 러닝 타임
+runningTime: "23:33"
+
+# 하이라이트 가사
+highlights: |
+  Strangers passing in the street
+  거리에서 스쳐가는 낯선 사람들
+  By chance two separate glances meet
+  우연히 두 시선이 교차하네
+  And I am you and what I see is me
+  그리고 나는 그대이며 내가 보는 것은 나
+
+# 가사 뒷 배경 그라데이션 방향
+degree: "160deg" # ex)135deg
+
+# 각 위치 퍼센트 별 색상
+# ex) - ["823A3B", "0%"]
+# ex) - ["703536", "32%"]
+# ex) - ["7B8493", "60%"]
+# ex) - ["264F57", "100%"]
+percent:
+  - ["823A3B", "0%"]
+  - ["703536", "32%"]
+  - ["7B8493", "60%"]
+  - ["264F57", "100%"]

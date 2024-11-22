@@ -1,7 +1,5 @@
 import clipboard
-
-def indexing(a):
-    return a[1:-1]
+import yaml
 
 def hex_to_rgb(hex_str):
     # '#' 제거
@@ -22,30 +20,28 @@ def is_english_char(char):
 
 
 
+# YAML 파일 읽기
+with open("Song-Introduction/config.yaml", "r", encoding="utf-8") as file:
+    data = yaml.safe_load(file)
+
+
 # 정보
-color = "#fff" # or #000
+color = data['color'] # or #000
 
-song = "Echoes" # 노래 제목    ex)Wish You Were Here(노래)
-song_view = "Echoes" # 출력되는 노래 제목    ex)Wish You Were Here
+song = data['song'] # 노래 제목    ex)Wish You Were Here(노래)
+song_view = data['song_view'] # 출력되는 노래 제목    ex)Wish You Were Here
 
-artist = "핑크 플로이드" # 아티스트 명    ex)핑크 플로이드
-artist_view = "Pink Floyd" # 출력되는 아티스트 명    ex)Pink Floyd
+artist = data['artist'] # 아티스트 명    ex)핑크 플로이드
+artist_view = data['artist_view'] # 출력되는 아티스트 명    ex)Pink Floyd
 
-link = "53N99Nim6WE"
+link = data['link']
 
-runningTime = "23:33"
+runningTime = data['runningTime']
 
 
 # 하이라이트 가사
-highlights = """
-Strangers passing in the street
-거리에서 스쳐가는 낯선 사람들
-By chance two separate glances meet
-우연히 두 시선이 교차하네
-And I am you and what I see is me
-그리고 나는 그대이며 내가 보는 것은 나
-"""
-highlights = indexing(highlights)
+highlights = data['highlights']
+highlights = highlights[0:-1]
 highlights = highlights.split('\n')
 
 highlights_result = []
@@ -62,14 +58,13 @@ highlights_result = '\n'.join(highlights_result)
 
 
 # 디자인
-degree = "160deg" # 'n'deg ex)135deg
+degree = data['degree'] # 'n'deg ex)135deg
 
 background = []
 
-percent("823A3B", "0%")
-percent("703536", "32%")
-percent("7B8493", "60%")
-percent("264F57", "100%")
+#percent 함수 쓰기
+for i in range(len(data['percent'])):
+    percent(data['percent'][i][0], data['percent'][i][1])
 
 background = ', '.join(background)
 
